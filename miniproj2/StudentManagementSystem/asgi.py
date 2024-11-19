@@ -1,16 +1,13 @@
-"""
-ASGI config for StudentManagementSystem project.
-
-It exposes the ASGI callable as a module-level variable named ``application``.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/5.1/howto/deployment/asgi/
-"""
-
+from __future__ import absolute_import, unicode_literals
 import os
-
-from django.core.asgi import get_asgi_application
+from celery import Celery
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'StudentManagementSystem.settings')
 
-application = get_asgi_application()
+app = Celery('StudentManagementSystem')
+app.config_from_object('django.conf:settings', namespace='CELERY')
+app.autodiscover_tasks()
+
+@app.task(bind=True)
+def debug_task(self):
+    print(f'Request: {self.request!r}')
