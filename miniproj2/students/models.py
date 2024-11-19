@@ -13,12 +13,11 @@ class Student(models.Model):
     def __str__(self):
         return self.name
 
-# Signal to create a Student profile for users with role 'student'
 @receiver(post_save, sender=User)
 def create_student_profile(sender, instance, created, **kwargs):
     if created and instance.role == 'student':
         Student.objects.create(
             user=instance,
-            name=instance.username,  # Or any logic to set a default name
+            name=instance.username,  
             email=instance.email
         )

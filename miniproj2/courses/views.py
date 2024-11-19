@@ -97,10 +97,8 @@ class CourseListCreateView(generics.ListCreateAPIView):
         user = self.request.user
 
         if user.role == 'teacher':
-            # Assign teacher as instructor
             serializer.save(instructor=user)
         elif user.role == 'admin':
-            # Admins must specify an instructor
             instructor_pk = self.request.data.get('instructor')
             if instructor_pk:
                 try:

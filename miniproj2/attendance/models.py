@@ -37,7 +37,7 @@ class Attendance(models.Model):
     course = models.ForeignKey(Course, on_delete=models.CASCADE, related_name="attendance")
     date = models.DateField()
     status = models.CharField(max_length=10, choices=STATUS_CHOICES)
-    marked_on_time = models.BooleanField(default=True)  # Tracks if marked during window
+    marked_on_time = models.BooleanField(default=True) 
 
     class Meta:
         unique_together = ('student', 'course', 'date')

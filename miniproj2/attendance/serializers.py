@@ -35,11 +35,9 @@ class NextAttendanceSerializer(serializers.ModelSerializer):
         return super().create(validated_data)
 
     def update(self, instance, validated_data):
-        # Remove 'course' and 'date' from validated_data to prevent any updates to them
         validated_data.pop('course', None)
         validated_data.pop('date', None)
 
-        # Perform the update with the remaining fields (status, marked_on_time)
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
         instance.save()
