@@ -12,11 +12,12 @@ from django_filters.rest_framework import DjangoFilterBackend
 logger = logging.getLogger("custom")
 
 class StudentListView(generics.ListAPIView):
+    queryset = Student.objects.all()
     serializer_class = GetStudentSerializer
-    permission_classes = [IsAuthenticated]
-    pagination_class = CustomPagination 
-    filter_backends = (DjangoFilterBackend,)
-    filterset_fields = ("name",)
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [DjangoFilterBackend]
+    ordering_fields = ['registration_date', 'name']  # Fields that can be ordered by
+    ordering = ['registration_date']
 
     def get_queryset(self):
         user = self.request.user

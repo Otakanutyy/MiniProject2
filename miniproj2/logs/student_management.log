@@ -227,3 +227,912 @@ INFO 2024-11-19 19:44:41,870 views Cache hit for student profile: 2
 WARNING 2024-11-19 20:08:56,673 log Forbidden: /api/courses/
 INFO 2024-11-19 20:08:56,690 views Cache miss for student profile: 2
 INFO 2024-11-19 20:08:56,693 views Cache hit for student profile: 2
+INFO 2024-11-19 20:10:00,504 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:10:20,715 autoreload Watching for file changes with StatReloader
+WARNING 2024-11-19 20:10:31,399 log Unauthorized: /api/students/all_profiles/
+WARNING 2024-11-19 20:10:31,400 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 401 183
+INFO 2024-11-19 20:10:46,841 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+ERROR 2024-11-19 20:11:02,306 log Internal Server Error: /api/courses/enrollments/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\generics.py", line 243, in get
+    return self.list(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 38, in list
+    queryset = self.filter_queryset(self.get_queryset())
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\generics.py", line 154, in filter_queryset
+    queryset = backend().filter_queryset(self.request, queryset, self)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django_filters\rest_framework\backends.py", line 68, in filter_queryset
+    filterset = self.get_filterset(request, queryset, view)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django_filters\rest_framework\backends.py", line 20, in get_filterset
+    filterset_class = self.get_filterset_class(view, queryset)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django_filters\rest_framework\backends.py", line 51, in get_filterset_class
+    class AutoFilterSet(self.filterset_base):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django_filters\filterset.py", line 78, in __new__
+    new_class.base_filters = new_class.get_filters()
+                             ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django_filters\filterset.py", line 367, in get_filters
+    raise TypeError(
+TypeError: 'Meta.fields' must not contain non-model field names: name
+ERROR 2024-11-19 20:11:02,313 basehttp "GET /api/courses/enrollments/ HTTP/1.1" 500 132098
+INFO 2024-11-19 20:11:31,630 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\courses\views.py changed, reloading.
+INFO 2024-11-19 20:11:32,640 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:11:34,841 basehttp "GET /api/courses/enrollments/ HTTP/1.1" 200 294
+INFO 2024-11-19 20:11:46,871 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+WARNING 2024-11-19 20:11:54,084 log Unauthorized: /api/students/profile/1/
+WARNING 2024-11-19 20:11:54,085 basehttp "GET /api/students/profile/1/ HTTP/1.1" 401 183
+INFO 2024-11-19 20:11:59,893 views Cache miss for student profile: 1
+INFO 2024-11-19 20:11:59,896 basehttp "GET /api/students/profile/1/ HTTP/1.1" 200 161
+INFO 2024-11-19 20:12:07,748 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+WARNING 2024-11-19 20:13:09,587 log Unauthorized: /api/courses/
+WARNING 2024-11-19 20:13:09,588 basehttp "GET /api/courses/ HTTP/1.1" 401 183
+INFO 2024-11-19 20:13:24,696 basehttp "GET /api/courses/ HTTP/1.1" 200 607
+INFO 2024-11-19 20:13:34,983 basehttp "GET /api/courses/?page=2 HTTP/1.1" 200 223
+INFO 2024-11-19 20:14:15,950 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+INFO 2024-11-19 20:14:45,399 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:14:46,656 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:15:04,350 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:15:05,396 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:15:09,331 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+INFO 2024-11-19 20:15:17,044 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:15:18,121 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:15:22,202 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 52
+INFO 2024-11-19 20:15:52,215 basehttp "POST /api/users/login/ HTTP/1.1" 200 523
+INFO 2024-11-19 20:16:04,599 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 713
+INFO 2024-11-19 20:16:16,813 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:16:17,873 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:16:18,493 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 713
+INFO 2024-11-19 20:17:42,973 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:17:43,927 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:17:48,222 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 713
+INFO 2024-11-19 20:18:35,133 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\students\views.py changed, reloading.
+INFO 2024-11-19 20:18:36,154 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:18:39,030 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 663
+INFO 2024-11-19 20:19:41,279 autoreload Watching for file changes with StatReloader
+ERROR 2024-11-19 20:22:38,387 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:22:38,401 basehttp "POST /api/grades/ HTTP/1.1" 500 214681
+ERROR 2024-11-19 20:23:08,780 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:23:08,791 basehttp "POST /api/grades/ HTTP/1.1" 500 214705
+ERROR 2024-11-19 20:23:27,970 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:23:27,982 basehttp "POST /api/grades/ HTTP/1.1" 500 214705
+INFO 2024-11-19 20:27:15,760 basehttp "GET /api/courses/ HTTP/1.1" 200 607
+INFO 2024-11-19 20:27:22,960 basehttp "GET /api/courses/?page=2 HTTP/1.1" 200 223
+ERROR 2024-11-19 20:27:44,250 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:27:44,261 basehttp "POST /api/grades/ HTTP/1.1" 500 214705
+INFO 2024-11-19 20:28:21,513 views Student teststudent1 enrolled in course test
+INFO 2024-11-19 20:28:21,514 basehttp "POST /api/courses/enrollments/ HTTP/1.1" 201 80
+ERROR 2024-11-19 20:28:25,890 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:28:25,901 basehttp "POST /api/grades/ HTTP/1.1" 500 214705
+ERROR 2024-11-19 20:28:38,480 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:28:38,492 basehttp "POST /api/grades/ HTTP/1.1" 500 214681
+ERROR 2024-11-19 20:28:48,589 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:28:48,601 basehttp "POST /api/grades/ HTTP/1.1" 500 214757
+INFO 2024-11-19 20:29:45,999 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 663
+ERROR 2024-11-19 20:30:19,604 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:30:19,614 basehttp "POST /api/grades/ HTTP/1.1" 500 214681
+ERROR 2024-11-19 20:30:37,934 log Internal Server Error: /api/grades/
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 19, in create
+    self.perform_create(serializer)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\mixins.py", line 24, in perform_create
+    serializer.save()
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 208, in save
+    self.instance = self.create(validated_data)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\rest_framework\serializers.py", line 989, in create
+    instance = ModelClass._default_manager.create(**validated_data)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 679, in create
+    obj.save(force_insert=True, using=self.db)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 891, in save
+    self.save_base(
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 997, in save_base
+    updated = self._save_table(
+              ^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1160, in _save_table
+    results = self._do_insert(
+              ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\base.py", line 1201, in _do_insert
+    return manager._insert(
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\query.py", line 1847, in _insert
+    return query.get_compiler(using=using).execute_sql(returning_fields)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\models\sql\compiler.py", line 1836, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\djangoceleryenv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 354, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.IntegrityError: NOT NULL constraint failed: grades_grade.course_id
+ERROR 2024-11-19 20:30:37,946 basehttp "POST /api/grades/ HTTP/1.1" 500 214693
+INFO 2024-11-19 20:32:05,675 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\serializers.py changed, reloading.
+INFO 2024-11-19 20:32:08,881 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 20:32:21,340 basehttp "POST /api/grades/ HTTP/1.1" 201 76
+INFO 2024-11-19 20:32:40,490 views Student teststudent2 enrolled in course test
+INFO 2024-11-19 20:32:40,492 basehttp "POST /api/courses/enrollments/ HTTP/1.1" 201 80
+INFO 2024-11-19 20:32:47,996 basehttp "POST /api/grades/ HTTP/1.1" 201 76
+INFO 2024-11-19 20:33:42,377 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 663

@@ -25,9 +25,7 @@ logger = logging.getLogger("custom")
 class EnrollmentListCreateView(generics.ListCreateAPIView):
     serializer_class = EnrollmentSerializer
     pagination_class = CustomPagination
-    filter_backends = (DjangoFilterBackend,)
-    filterset_fields = ("name",)
-    
+
     def get_permissions(self):
         if self.request.method == 'GET':
             return [IsAuthenticated()] 
