@@ -9,7 +9,7 @@ from rest_framework.exceptions import PermissionDenied
 from django.core.cache import cache
 from rest_framework.decorators import action
 from rest_framework.response import Response
-
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.exceptions import PermissionDenied
 from .models import Enrollment
@@ -18,12 +18,16 @@ from .permissions import CanManageEnrollments
 from users.models import User
 import logging
 
+from pagination.pagination import CustomPagination
 
 logger = logging.getLogger("custom")
 
 class EnrollmentListCreateView(generics.ListCreateAPIView):
     serializer_class = EnrollmentSerializer
-
+    pagination_class = CustomPagination
+    filter_backends = (DjangoFilterBackend,)
+    filterset_fields = ("name",)
+    
     def get_permissions(self):
         if self.request.method == 'GET':
             return [IsAuthenticated()] 
@@ -68,6 +72,9 @@ class CourseListCreateView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated, CanManageCourses]
+    pagination_class = CustomPagination
+    filter_backends = (DjangoFilterBackend,)
+    filterset_fields = ("name",)
 
     def get_permissions(self):
         if self.request.method == 'GET':

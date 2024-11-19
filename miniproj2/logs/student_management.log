@@ -224,3 +224,6 @@ NameError: name 'Response' is not defined
 WARNING 2024-11-19 19:44:41,849 log Forbidden: /api/courses/
 INFO 2024-11-19 19:44:41,868 views Cache miss for student profile: 2
 INFO 2024-11-19 19:44:41,870 views Cache hit for student profile: 2
+WARNING 2024-11-19 20:08:56,673 log Forbidden: /api/courses/
+INFO 2024-11-19 20:08:56,690 views Cache miss for student profile: 2
+INFO 2024-11-19 20:08:56,693 views Cache hit for student profile: 2
