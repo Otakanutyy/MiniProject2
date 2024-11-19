@@ -59,3 +59,7 @@ INFO 2024-11-19 18:05:24,712 basehttp "GET /admin/students/student/ HTTP/1.1" 20
 INFO 2024-11-19 18:05:24,726 basehttp "GET /admin/jsi18n/ HTTP/1.1" 200 3342
 INFO 2024-11-19 18:10:27,395 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\StudentManagementSystem\settings.py changed, reloading.
 INFO 2024-11-19 18:10:28,458 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:40:03,231 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:50:39,092 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:51:52,960 autoreload Watching for file changes with StatReloader
+INFO 2024-11-19 18:54:10,942 autoreload Watching for file changes with StatReloader
