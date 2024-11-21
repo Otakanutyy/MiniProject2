@@ -48,14 +48,11 @@ class AttendanceWindowCreateView(generics.CreateAPIView):
     def perform_create(self, serializer):
         user = self.request.user
         course = serializer.validated_data['course']
-
-        # Ensure teachers can only open windows for their courses
         if user.role == 'teacher' and course.instructor != user:
             raise serializers.ValidationError(
                 {"detail": "You can only open attendance for your own courses."}
             )
 
-        # Save the attendance window
         serializer.save()
 
 
@@ -66,11 +63,9 @@ class AttendanceMarkView(generics.CreateAPIView):
     def perform_create(self, serializer):
         user = self.request.user
 
-        # Ensure the user is a student
-        if user.role != 'student':
+        if user.role != 'student' | user.role != "admin":
             raise ValidationError({"detail": "Only students can mark attendance."})
 
-        # Get the student's profile
         try:
             student_profile = user.student_profile
         except Student.DoesNotExist:
@@ -79,11 +74,9 @@ class AttendanceMarkView(generics.CreateAPIView):
         course = serializer.validated_data['course']
         date = serializer.validated_data['date']
 
-        # Check if the student is enrolled in the course
         if not course.enrollments.filter(student=student_profile).exists():
             raise ValidationError({"detail": "You are not enrolled in this course."})
 
-        # Check if the attendance window is open
         attendance_window = AttendanceWindow.objects.filter(
             course=course, is_open=True
         ).first()
@@ -91,9 +84,7 @@ class AttendanceMarkView(generics.CreateAPIView):
         if not attendance_window:
             raise ValidationError({"detail": "Attendance is not open for this course."})
 
-        # Ensure attendance is marked within the allowed date
         if attendance_window.date != date:
             raise ValidationError({"detail": "Attendance is only open for today."})
 
-        # Mark attendance as present
         serializer.save(student=student_profile, status="present", marked_on_time=True)

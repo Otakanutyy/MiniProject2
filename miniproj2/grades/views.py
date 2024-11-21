@@ -36,7 +36,6 @@ class GradeViewSet(ModelViewSet):
             f"Course {grade.course.name} - Grade {grade.grade}"
         )
         
-        # Trigger Celery task to send grade update report
         send_grade_update_report.apply_async(args=[grade.id])
 
     def perform_update(self, serializer):
@@ -46,5 +45,4 @@ class GradeViewSet(ModelViewSet):
             f"Course {grade.course.name} - Grade {grade.grade}"
         )
         
-        # Trigger Celery task to send grade update report
         send_grade_update_report.apply_async(args=[grade.id])

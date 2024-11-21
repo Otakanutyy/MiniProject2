@@ -23,7 +23,6 @@ class NextAttendanceSerializer(serializers.ModelSerializer):
         course = validated_data.get('course')
         date = validated_data.get('date')
 
-        # Check for open window
         #window = AttendanceWindow.objects.filter(course=course, date=date, is_open=True).first()
         #if not window:
         #    raise serializers.ValidationError({"detail": "Attendance is not open for this course."})
