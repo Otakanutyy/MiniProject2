@@ -72,7 +72,6 @@ def send_weekly_performance_report():
 
     students = User.objects.filter(role="student")
     for student in students:
-        # Attendance records for the week
         attendance_records = Attendance.objects.filter(
             student__user=student, date__range=[start_of_week, today]
         )
@@ -80,7 +79,6 @@ def send_weekly_performance_report():
         present_days = attendance_records.filter(status="present").count()
         attendance_summary = f"{present_days}/{total_days} days present."
 
-        # Grade records for the week
         grades = Grade.objects.filter(student__user=student)
         total_grades = grades.count()
         average_grade = (
@@ -89,15 +87,13 @@ def send_weekly_performance_report():
             else 0
         )
 
-        # Create a list of grades in a readable format
         grade_details = "\n".join([f"Course: {grade.course.name}, Grade: {grade.grade}, Date: {grade.date}" for grade in grades])
 
         report = f"{student.username},\n\nYour performance for this week:\n"
         report += f"Attendance: {attendance_summary}\n"
-        report += f"Grades:\n{grade_details}\n"  # Display individual grades
+        report += f"Grades:\n{grade_details}\n" 
         report += f"Average score: {average_grade:.2f}.\n"
 
-        # Send the email to the student
         send_mail(
             subject="Weekly Performance Report",
             message=report,

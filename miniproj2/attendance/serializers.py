@@ -1,13 +1,13 @@
 from rest_framework import serializers
-from .models import Attendance, Student, Course #AttendanceWindow,
+from .models import Attendance, Student, Course , AttendanceWindow
 from students.serializers import StudentSerializer
 from courses.serializers import CourseSerializer
 
-'''class AttendanceWindowSerializer(serializers.ModelSerializer):
+class AttendanceWindowSerializer(serializers.ModelSerializer):
     class Meta:
         model = AttendanceWindow
-        fields = ['id', 'course', 'date', 'start_time', 'end_time', 'is_open']
-        read_only_fields = ['is_open']'''
+        fields = ['id', 'course', 'date', 'timer', 'is_open']
+        read_only_fields = ['is_open']
 
 
 class NextAttendanceSerializer(serializers.ModelSerializer):
@@ -43,10 +43,9 @@ class NextAttendanceSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
-class AttendanceSerializer(serializers.ModelSerializer):
-    student = StudentSerializer(read_only=True)
-    course = CourseSerializer(read_only=True)
 
+class AttendanceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Attendance
-        fields = ["id", "student", "course", "date", "status"]
+        fields = ["id", "student", "course", "date", "status", "marked_on_time"]
+        read_only_fields = ["marked_on_time", "status", "student"]

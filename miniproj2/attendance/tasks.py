@@ -1,10 +1,11 @@
 from celery import shared_task
 from django.utils.timezone import now
+from .models import AttendanceWindow
 
-'''@shared_task
-def close_expired_windows():
-    current_time = now()
-    expired_windows = AttendanceWindow.objects.filter(end_time__lte=current_time, is_open=True)
-
-    for window in expired_windows:
-        window.close_window()'''
+@shared_task
+def close_window_task(window_id):
+    try:
+        window = AttendanceWindow.objects.get(id=window_id)
+        window.close_window()
+    except AttendanceWindow.DoesNotExist:
+        pass
