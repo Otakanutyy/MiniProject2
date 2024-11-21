@@ -1205,3 +1205,29 @@ INFO 2024-11-21 15:35:44,998 basehttp "GET /api/courses/ HTTP/1.1" 200 607
 INFO 2024-11-21 15:36:02,213 basehttp "POST /api/attendance/create_att_window/ HTTP/1.1" 201 65
 INFO 2024-11-21 15:36:24,832 basehttp "POST /api/users/login/ HTTP/1.1" 200 529
 INFO 2024-11-21 15:36:41,080 basehttp "POST /api/attendance/mark-attendance/ HTTP/1.1" 201 92
+INFO 2024-11-21 15:53:44,530 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\views.py changed, reloading.
+INFO 2024-11-21 15:53:46,346 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 15:53:49,499 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 15:53:51,532 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 15:55:41,745 basehttp "GET /api/courses/?page=2 HTTP/1.1" 200 223
+WARNING 2024-11-21 15:56:33,698 log Bad Request: /api/grades/
+WARNING 2024-11-21 15:56:33,699 basehttp "POST /api/grades/ HTTP/1.1" 400 39
+INFO 2024-11-21 15:56:43,902 views Grade created: Student teststudent2 - Course test - Grade 10
+INFO 2024-11-21 15:56:44,149 basehttp "POST /api/grades/ HTTP/1.1" 201 76
+INFO 2024-11-21 16:46:30,863 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:48:16,109 views Grade created: Student teststudent2 - Course test - Grade 10
+INFO 2024-11-21 16:48:16,404 basehttp "POST /api/grades/ HTTP/1.1" 201 76
+INFO 2024-11-21 16:50:12,879 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:50:14,886 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:54:58,181 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:55:02,489 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:56:31,686 basehttp "GET /api/grades/ HTTP/1.1" 200 309
+INFO 2024-11-21 16:57:12,480 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:57:13,646 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:57:19,450 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:57:20,751 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:57:52,480 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:57:54,028 autoreload Watching for file changes with StatReloader
+INFO 2024-11-21 16:58:17,325 tasks Grade update email sent to kogsaitama@gmail.com for course test.
+INFO 2024-11-21 16:58:59,078 autoreload C:\Users\KogSa\OneDrive\Рабочий стол\projects\DjangoFall2024\miniproject2\MiniProject2\miniproj2\grades\tasks.py changed, reloading.
+INFO 2024-11-21 16:59:01,268 autoreload Watching for file changes with StatReloader

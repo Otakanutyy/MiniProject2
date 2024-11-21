@@ -20,17 +20,6 @@ def send_attendance_reminder():
 
 
 @shared_task
-def send_grade_update_notification(student_email, course_name, grade):
-    send_mail(
-        subject="Grade Update Notification",
-        message=f"Your grade for the course {course_name} has been updated to {grade}.",
-        from_email="admin@school.com",
-        recipient_list=[student_email],
-    )
-    return f"Sent grade update notification to {student_email}."
-
-
-@shared_task
 def send_daily_report():
     today = date.today()
 
