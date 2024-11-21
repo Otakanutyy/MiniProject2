@@ -39,6 +39,21 @@ class AttendanceViewSet(ModelViewSet):
             f"Course {attendance.course.name} - Status {attendance.status}"
         )
 
+    def perform_update(self, serializer):
+        user = self.request.user
+
+        # Ensure only Admin or Teacher can perform this action
+        if user.role not in ['teacher', 'admin']:
+            raise ValidationError({"detail": "You do not have permission to update attendance."})
+
+        # Log the update
+        attendance = serializer.save()
+        logger.info(
+            f"Attendance updated: Student {attendance.student.user.username} - "
+            f"Course {attendance.course.name} - New Status {attendance.status}"
+        )
+
+
 
 class AttendanceWindowCreateView(generics.CreateAPIView):
     queryset = AttendanceWindow.objects.all()
@@ -63,7 +78,7 @@ class AttendanceMarkView(generics.CreateAPIView):
     def perform_create(self, serializer):
         user = self.request.user
 
-        if user.role != 'student' | user.role != "admin":
+        if user.role != 'student':
             raise ValidationError({"detail": "Only students can mark attendance."})
 
         try:
