@@ -2588,3 +2588,17 @@ Traceback (most recent call last):
 django.db.utils.OperationalError: no such table: analytics_apirequestlog
 ERROR 2024-11-24 17:13:21,457 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 500 25142
 INFO 2024-11-24 17:13:46,334 autoreload Watching for file changes with StatReloader
+INFO 2024-11-24 17:13:49,145 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:01,608 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:04,524 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:13,198 basehttp "GET /api/attendance/ HTTP/1.1" 200 94
+INFO 2024-11-24 17:14:18,147 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:22,560 views Cache hit for student list: student_list_all
+INFO 2024-11-24 17:14:22,564 basehttp "GET /api/students/all_profiles/ HTTP/1.1" 200 117
+INFO 2024-11-24 17:14:24,593 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:27,991 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:28,128 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:28,257 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:28,389 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:28,520 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
+INFO 2024-11-24 17:14:29,723 basehttp "GET /api/analytics/active-users/ HTTP/1.1" 200 179
