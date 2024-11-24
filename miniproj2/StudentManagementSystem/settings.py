@@ -75,7 +75,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'analytics.middleware.RequestLoggingMiddleware',
+    'analytics.middleware.LogAPIRequestMiddleware'
 ]
 
 ROOT_URLCONF = 'StudentManagementSystem.urls'

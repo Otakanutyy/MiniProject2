@@ -1,41 +1,35 @@
+from users.models import User 
+from django.db.models import Count
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
-from django.db.models import Count
-from .models import APIRequestLog, CourseAccessLog
-from drf_spectacular.utils import extend_schema
-from users.models import User
-from .models import ActiveUser
+from rest_framework import permissions
+from courses.models import Course
 
 class MostActiveUsersView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
-    @extend_schema(
-        description="Get the most active users based on the number of API requests",
-        responses={200: "List of most active users"},
-    )
     def get(self, request, *args, **kwargs):
-        active_users = ActiveUser.objects.filter(user__is_superuser=False).order_by('-api_calls')[:10]
-        data = [{"username": user.user.username, "api_calls": user.api_calls} for user in active_users]
+        # Count all API requests made by the user, including course accesses
+        active_users = User.objects.annotate(
+            api_requests_count=Count('apirequestlog')  # Count all requests
+        ).order_by('-api_requests_count')[:10]  # Order by total API requests in descending order
 
-        if not data:
-            return Response({"message": "No active users found."}, status=200)
-
-        return Response(data)
-
+        user_data = [
+            {"username": user.username, "api_requests_count": user.api_requests_count}
+            for user in active_users
+        ]
+        return Response(user_data)
 
 class MostPopularCoursesView(APIView):
-    permission_classes = [IsAuthenticated]
+    permission_classes = [permissions.IsAuthenticated]
 
-    @extend_schema(
-        description="Get the most popular courses based on the number of accesses",
-        responses={200: "List of most popular courses"},
-    )
     def get(self, request, *args, **kwargs):
-        popular_courses = CourseAccessLog.objects.values('course_id') \
-            .annotate(access_count=Count('course_id')) \
-            .order_by('-access_count')[:10]
-        
-        data = [{"course_id": course['course_id'], "access_count": course['access_count']} for course in popular_courses]
-        return Response(data)
+        popular_courses = Course.objects.annotate(
+            enrollment_count=Count('enrollments') 
+        ).order_by('-enrollment_count')[:10]
 
+        course_data = [
+            {"course_name": course.name, "enrollment_count": course.enrollment_count}
+            for course in popular_courses
+        ]
+        return Response(course_data)

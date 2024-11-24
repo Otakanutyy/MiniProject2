@@ -20,21 +20,14 @@ from users.models import User
 from drf_spectacular.utils import extend_schema, OpenApiParameter
 import logging
 
+
 from pagination.pagination import CustomPagination
 
 logger = logging.getLogger("custom")
 
-from analytics.models import CourseAccessLog
+from analytics.models import CourseAccessLog, EnrollmentLog
 from django.utils.timezone import make_aware
 from datetime import datetime
-
-def log_course_access(user, course_id):
-    """Log a user's access to a course."""
-    CourseAccessLog.objects.create(
-        user=user,
-        course_id=course_id,
-        timestamp=make_aware(datetime.now())
-    )
 
 class EnrollmentListCreateView(generics.ListCreateAPIView):
     serializer_class = EnrollmentSerializer
@@ -79,6 +72,8 @@ class EnrollmentListCreateView(generics.ListCreateAPIView):
                 raise PermissionDenied("Students cannot create enrollments.")
             enrollment = serializer.save()
 
+        EnrollmentLog.objects.create(user=user, course=course)
+
         logger.info(
             f"Student {enrollment.student.user.username} enrolled in course {enrollment.course.name}"
         )
@@ -98,7 +93,7 @@ class CourseDetailUpdateView(generics.RetrieveUpdateAPIView):
     )
     def get(self, request, *args, **kwargs):
         course = self.get_object()
-        log_course_access(request.user, course.id)
+        CourseAccessLog.objects.create(user=request.user, course=course)
         return super().get(request, *args, **kwargs)
 
     @extend_schema(
