@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'grades',
     'attendance',
     'notifications',
+    'analytics',
     #'teacher',
     #'admin',
 
@@ -43,12 +44,17 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_simplejwt',
     'django_celery_beat',
-    'django_filters'
+    'django_filters',
+    'drf_spectacular',
 ]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
         'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticated',
     ],
 }
 
@@ -68,6 +74,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    'analytics.middleware.RequestLoggingMiddleware',
 ]
 
 ROOT_URLCONF = 'StudentManagementSystem.urls'
@@ -208,3 +216,22 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'kogsaitama@gmail.com' 
 EMAIL_HOST_PASSWORD = 'fato xixf tncb icfm'  
+
+
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Student Management System API',
+    'DESCRIPTION': 'API documentation for the Student Management System',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+    'SECURITY': [{'BearerAuth': []}],
+    'COMPONENT_SPLIT_REQUEST': True,
+    'SCHEMA_PATH_PREFIX': '/api/',
+    'SECURITY_DEFINITIONS': {
+        'BearerAuth': {
+            'type': 'apiKey',
+            'in': 'header',
+            'name': 'Authorization',
+            'description': 'Enter JWT token as `Bearer <your-token>`',
+        },
+    },
+}

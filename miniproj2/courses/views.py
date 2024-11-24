@@ -16,15 +16,39 @@ from .models import Enrollment
 from .serializers import EnrollmentSerializer
 from .permissions import CanManageEnrollments
 from users.models import User
+
+from drf_spectacular.utils import extend_schema, OpenApiParameter
 import logging
 
 from pagination.pagination import CustomPagination
 
 logger = logging.getLogger("custom")
 
+from analytics.models import CourseAccessLog
+from django.utils.timezone import make_aware
+from datetime import datetime
+
+def log_course_access(user, course_id):
+    """Log a user's access to a course."""
+    CourseAccessLog.objects.create(
+        user=user,
+        course_id=course_id,
+        timestamp=make_aware(datetime.now())
+    )
+
 class EnrollmentListCreateView(generics.ListCreateAPIView):
     serializer_class = EnrollmentSerializer
     pagination_class = CustomPagination
+
+    @extend_schema(
+    description="Retrieve a list of enrollments or create a new enrollment",
+    responses={200: EnrollmentSerializer(many=True), 201: EnrollmentSerializer, 400: "Validation Error"},
+    parameters=[
+        OpenApiParameter('student', type=int, description="Filter by student ID"),
+        OpenApiParameter('course', type=int, description="Filter by course ID"),
+        OpenApiParameter('ordering', type=str, description="Order by field(s), e.g., 'registration_date'")
+    ]
+)
 
     def get_permissions(self):
         if self.request.method == 'GET':
@@ -65,6 +89,29 @@ class CourseDetailUpdateView(generics.RetrieveUpdateAPIView):
     serializer_class = CourseSerializer
     permission_classes = [permissions.IsAuthenticated, CanManageCourses]
 
+    @extend_schema(
+        description="Retrieve course details by ID",
+        responses={200: CourseSerializer, 404: "Not Found"},
+        parameters=[
+            #OpenApiParameter('id', type=int, description="The ID of the course to retrieve or update")
+        ]
+    )
+    def get(self, request, *args, **kwargs):
+        course = self.get_object()
+        log_course_access(request.user, course.id)
+        return super().get(request, *args, **kwargs)
+
+    @extend_schema(
+        description="Update course details by ID",
+        request=CourseSerializer,
+        responses={200: CourseSerializer, 400: "Validation Error"},
+        parameters=[
+            OpenApiParameter('id', type=int, description="The ID of the course to retrieve or update")
+        ]
+    )
+    def put(self, request, *args, **kwargs):
+        return super().put(request, *args, **kwargs)
+
 
 class CourseListCreateView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
@@ -74,11 +121,37 @@ class CourseListCreateView(generics.ListCreateAPIView):
     filter_backends = (DjangoFilterBackend,)
     filterset_fields = ("name",)
 
+    @extend_schema(
+        description="Retrieve a list of courses",
+        responses={200: CourseSerializer(many=True)},
+        parameters=[
+            OpenApiParameter('name', type=str, description="Filter courses by name"),
+            OpenApiParameter('ordering', type=str, description="Order by field(s), e.g., 'name', 'instructor'")
+        ]
+    )
+    def get(self, request, *args, **kwargs):
+        return super().get(request, *args, **kwargs)
+
+    @extend_schema(
+        description="Create a new course",
+        request=CourseSerializer,
+        responses={201: CourseSerializer, 400: "Validation Error"},
+    )
+    def post(self, request, *args, **kwargs):
+        return super().post(request, *args, **kwargs)
+
     def get_permissions(self):
         if self.request.method == 'GET':
             return [AllowAny()]
         return [permissions.IsAuthenticated(), CanManageCourses()]
 
+    @extend_schema(
+        description="Retrieve a cached list of courses",
+        responses={200: CourseSerializer(many=True)},
+        parameters=[
+            OpenApiParameter('role', type=str, description="Filter courses by user role ('teacher', 'student')")
+        ]
+    )
     @action(detail=False, methods=["get"])
     def cached_list(self, request):
         user = request.user
@@ -113,5 +186,10 @@ class CourseListCreateView(generics.ListCreateAPIView):
                     raise serializers.ValidationError({"instructor": "The specified instructor does not exist or is not a teacher."})
             else:
                 raise serializers.ValidationError({"instructor": "Admins must provide an instructor."})
+        self.invalidate_course_list_cache(user)
 
+    def invalidate_course_list_cache(self, user):
+        cache_key = f"courses_list_{user.id}"
+        cache.delete(cache_key)
+        logger.info(f"Cache invalidated for course list: {cache_key}")
 
